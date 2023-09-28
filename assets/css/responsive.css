@@ -48,4 +48,18 @@
 	
 }
 
+/* Estilo para pantallas más grandes (mayor de 768px de ancho) */
+.logo img {
+    width: 20%; /* Tamaño por defecto para pantallas grandes */
+    height: auto;
+}
+
+/* Estilo para pantallas más pequeñas (menor de 768px de ancho, ajusta este valor según tus necesidades) */
+@media screen and (max-width: 768px) {
+    .logo img {
+        width: 50%; /* Tamaño para dispositivos móviles */
+        height: auto;
+    }
+}
+
 
