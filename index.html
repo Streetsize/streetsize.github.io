@@ -28,6 +28,20 @@
         <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" type="text/css" rel="stylesheet">
     </head>
     <body>
+    <!-- Script JavaScript para ocultar la pantalla de carga cuando la página esté lista -->
+    <script>
+        window.addEventListener("load", function () {
+            var loader = document.querySelector(".loader-wrapper");
+            var content = document.getElementById("content");
+            
+            // Ocultar la pantalla de carga
+            loader.style.display = "none";
+            
+            // Mostrar el contenido de la página
+            content.style.display = "block";
+        });
+    </script>
+	
         <!-- Header -->
         <div id="header" style="background-position: 50% 0%; height:100%;" data-stellar-background-ratio="0.5">
             <div class="container">
