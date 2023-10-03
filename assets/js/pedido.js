@@ -28,7 +28,7 @@
             const envioDomicilio = document.getElementById('envioDomicilio').checked;
             const ubicacion = document.getElementById('ubicacion').value;
 
-            let mensaje = `¡Hola! Quiero ordenar ${cantidad1} remera Oversize 100% algodón con Talle: ${talle1} y Color: ${color1}.`;
+            let mensaje = `¡Hola! Quiero ordenar *${cantidad1} remera Oversize 100% algodón con Talle: ${talle1} y Color: ${color1}.*`;
 
             // Si el usuario ha marcado "Agregar otra prenda", agregamos los detalles de la segunda prenda al mensaje
             if (document.getElementById('agregarOtraPrenda').checked) {
@@ -36,7 +36,7 @@
                 const color2 = document.getElementById('color2').value;
 			const cantidad2 = document.getElementById('cantidad2').value;
 
-                mensaje += ` También quiero ${cantidad2} remera de Talle: ${talle2} y Color: ${color2}.`;
+                mensaje += ` También quiero *${cantidad2} remera de Talle: ${talle2} y Color: ${color2}.*`;
             }
 			
 			            if (envioDomicilio) {
