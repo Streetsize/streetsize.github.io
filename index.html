@@ -176,25 +176,20 @@
 						<p>Atte: Joaquín y Diego</p>
                     </div>
                 </div>
-            </div>
-		                        <!-- Login Box -->
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Tus otros elementos head aquí -->
-</head>
-<body>
+            </div>		
+		                        <!-- Pedido Box -->								
     <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
         <form class="login-page" id="pedido-form">
             <div class="login-header margin-bottom-30">
                 <h2>Realiza tu pedido</h2>
             </div>
+
             <div class="col-md-6">
                 <h3>Talle</h3>
             </div>
             <div class="input-group margin-bottom-20">
                 <span class="input-group-addon">
-                    <i class="fa fa-user"></i>
+                    <i class="fa-male"></i>
                 </span>
                 <select class="form-control" id="talle">
                     <option value="XS">XS</option>
@@ -206,12 +201,13 @@
                     <option value="XXXL">XXXL</option>
                 </select>
             </div>
+
             <div class="col-md-6">
                 <h3>Color</h3>
             </div>
             <div class="input-group margin-bottom-20">
                 <span class="input-group-addon">
-                    <i class="fa fa-user"></i>
+                    <i class="fa-arrow-right"></i>
                 </span>
                 <select class="form-control" id="color">
                     <option value="Blanco">Blanco</option>
@@ -223,34 +219,98 @@
                     <option value="Rosado">Rosado</option>
                 </select>
             </div>
+            <div class="col-md-6">
+                <h3>Cantidad</h3>
+            </div>
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon">
+				<i class="fa-users"></i>
+			</span>
+			<input placeholder="Cantidad" class="form-control" type="number" id="cantidad" value="1">
+		</div>		
+            <div class="form-group">
+                <label for="agregarOtraPrenda">¿Agregar otra prenda?</label>
+                <input type="checkbox" id="agregarOtraPrenda">
+            </div>
+
+            <!-- Contenedor para la segunda prenda (inicialmente oculto) -->
+            <div id="segundaPrenda" style="display: none;">
+                <div class="col-md-6">
+                    <h3>Talle</h3>
+                </div>
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon">
+                        <i class="fa-male"></i>
+                    </span>
+                    <select class="form-control" id="talle2">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="XXXL">XXXL</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Color</h3>
+                </div>
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon">
+                        <i class="fa-arrow-right"></i>
+                    </span>
+                    <select class="form-control" id="color2">
+                        <option value="Blanco">Blanco</option>
+                        <option value="Negro">Negro</option>
+                        <option value="Azul Petroleo">Azul Petroleo</option>
+                        <option value="Mostaza">Mostaza</option>
+                        <option value="Gris">Gris</option>
+                        <option value="Celeste">Celeste</option>
+                        <option value="Rosado">Rosado</option>
+                    </select>
+                </div>
+            <div class="col-md-6">
+                <h3>Cantidad</h3>
+            </div>
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon">
+				<i class="fa-users"></i>
+			</span>
+			<input placeholder="Cantidad" class="form-control" type="number" id="cantidad2" value="1">
+		</div>
+            </div>
+
+            <div class="form-group">
+                <label for="envioDomicilio">¿Envío a domicilio?</label>
+                <input type="checkbox" id="envioDomicilio">
+            </div>
+
+            <!-- Campos para la ubicación y costo de envío (inicialmente ocultos) -->
+            <div id="ubicacionDiv" style="display: none;">
+                <div class="input-group margin-bottom-20">
+                    <span class="input-group-addon">
+                        <i class="fa fa-map-marker"></i>
+                    </span>
+                    <input placeholder="Ubicación de entrega" class="form-control" type="text" id="ubicacion">
+                </div>
+                <div class="alert alert-info" id="costoEnvio" style="display: none;">
+                    El costo de envío es de $400.
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <button class="btn btn-primary pull-right" type="button" id="generar-enlace">Continuar</button>
                 </div>
             </div>
+
             <hr>
-             <p>Por favor, seleccione el talle y el color de su remera.
-			 Al hacer clic en 'Continuar', se generará un enlace de WhatsApp con su pedido preformado. 
-			 Simplemente envíelo y recibirá una respuesta en minutos.</p>
+            <p>Por favor, seleccione el talle y el color de su remera. Al hacer clic en 'Continuar', se generará un enlace de WhatsApp con su pedido preformado. Simplemente envíelo y recibirá una respuesta en minutos.</p>
         </form>
     </div>
-
-    <script>
-        document.getElementById('generar-enlace').addEventListener('click', function() {
-            const talle = document.getElementById('talle').value;
-            const color = document.getElementById('color').value;
-            
-            // Construye el enlace de WhatsApp con los valores seleccionados
-            const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=5492612527052&text=¡Hola! Quiero ordenar una remera Oversize 100% algodón con Talle: ${talle} y Color: ${color}.`;
-
-            // Abre el enlace en una nueva ventana o pestaña
-            window.open(enlaceWhatsApp, '_blank');
-        });
-    </script>
-</body>
-</html>
-
-                        <!-- End Login Box -->
+    <script src="assets/js/pedido.js">    </script>
+                        <!-- End Pedido Box -->
         </div>
         <!-- End Content -->
         <!-- Hiring -->
