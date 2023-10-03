@@ -40,7 +40,7 @@
             }
 			
 			            if (envioDomicilio) {
-                mensaje += ` Mi ubicación de entrega es: ${ubicacion}.`;
+                mensaje += ` Mi ubicación de entrega es: *${ubicacion}*.`;
             } else {
                 mensaje += ' Deseo retirar mi producto en un punto de encuentro.';
             }
