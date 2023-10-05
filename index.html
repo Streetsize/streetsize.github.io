@@ -143,21 +143,6 @@
                             </figure>
                         </a>
                     </div>
-                    <!-- Portfolio Item -->
-                    <div class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40 mobile-hide">
-    <a href="#">
-        <figure class="animate fadeInRight">
-            <div class="grid-image">
-                <div class="featured-info">
-                    <div class="info-wrapper">Placerat facer possim</div>
-                </div>
-                <img alt="image9" src="assets/img/frontpage/image9.jpg">
-            </div>
-        </figure>
-    </a>
-</div>
-
-                    <!-- End Portfolio Item -->
                 </div>
             </div>
         </div>
@@ -178,7 +163,7 @@
                 </div>
             </div>		
 		                        <!-- Pedido Box -->								
-    <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
         <form class="login-page" id="pedido-form">
             <div class="login-header margin-bottom-30">
                 <h2>Realiza tu pedido</h2>
@@ -212,11 +197,10 @@
                 <select class="form-control" id="color">
                     <option value="Blanco">Blanco</option>
                     <option value="Negro">Negro</option>
-                    <option value="Azul Petroleo">Azul Petroleo</option>
+                    <option value="AzulPetroleo">Azul Petroleo</option>
                     <option value="Mostaza">Mostaza</option>
-                    <option value="Gris">Gris</option>
                     <option value="Celeste">Celeste</option>
-                    <option value="Rosado">Rosado</option>
+					<option value="Bordo">Bordo</option>
                 </select>
             </div>
             <div class="col-md-6">
@@ -266,11 +250,10 @@
                     <select class="form-control" id="color2">
                         <option value="Blanco">Blanco</option>
                         <option value="Negro">Negro</option>
-                        <option value="Azul Petroleo">Azul Petroleo</option>
+                        <option value="AzulPetroleo">Azul Petroleo</option>
                         <option value="Mostaza">Mostaza</option>
-                        <option value="Gris">Gris</option>
                         <option value="Celeste">Celeste</option>
-                        <option value="Rosado">Rosado</option>
+						<option value="Bordo">Bordo</option>
                     </select>
                 </div>
             <div class="col-md-6">
@@ -315,131 +298,7 @@
             <p>Por favor, seleccione el talle y el color de su remera. Al hacer clic en 'Continuar', se generará un enlace de WhatsApp con su pedido preformado. Simplemente envíelo y recibirá una respuesta en minutos.</p>
         </form>
     </div>
-<script>
- // Asegurarse de que el código se ejecute después de que el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener referencia al elemento de imagen
-    const imagenRemera = document.getElementById('imagenRemera');
-    const imagenRemera2 = document.getElementById('imagenRemera2');
-
-    // Obtener referencia al elemento de selección de color
-    const selectColor = document.getElementById('color');
-    const selectColor2 = document.getElementById('color2');
-
-    // Definir un objeto que mapea los colores a las rutas de las imágenes para la primera prenda
-    const colorImagenes = {
-        Blanco: 'assets/img/remera/blanco.png',
-        Negro: 'assets/img/remera/negro.png',
-        // Agrega más rutas de imágenes para otros colores aquí
-    };
-
-    // Definir un objeto que mapea los colores a las rutas de las imágenes para la segunda prenda
-    const colorImagenes2 = {
-        Blanco: 'assets/img/remera/blanco.png',
-        Negro: 'assets/img/remera/negro.png',
-        // Agrega más rutas de imágenes para otros colores aquí
-    };
-
-    // Agregar un evento para detectar cambios en la selección de color
-    selectColor.addEventListener('change', function() {
-        const selectedColor = this.value; // Obtener el valor seleccionado
-
-        // Verificar si hay una ruta de imagen para el color seleccionado en la primera prenda
-        if (colorImagenes[selectedColor]) {
-            // Actualizar la fuente de la imagen de la primera prenda con la ruta correspondiente
-            imagenRemera.src = colorImagenes[selectedColor];
-        }
-    });
-
-    // Agregar un evento para detectar cambios en la selección de color2
-    selectColor2.addEventListener('change', function() {
-        const selectedColor = this.value; // Obtener el valor seleccionado
-
-        // Verificar si hay una ruta de imagen para el color seleccionado en la segunda prenda
-        if (colorImagenes2[selectedColor]) {
-            // Actualizar la fuente de la imagen de la segunda prenda con la ruta correspondiente
-            imagenRemera2.src = colorImagenes2[selectedColor];
-        }
-    });
-});
-
-</script>
-    <script>
-  document.getElementById('agregarOtraPrenda').addEventListener('change', function() {
-            const segundaPrenda = document.getElementById('segundaPrenda');
-
-            if (this.checked) {
-                segundaPrenda.style.display = 'block';
-            } else {
-                segundaPrenda.style.display = 'none';
-            }
-        });
-
-        document.getElementById('envioDomicilio').addEventListener('change', function() {
-            const ubicacionDiv = document.getElementById('ubicacionDiv');
-            const costoEnvio = document.getElementById('costoEnvio');
-
-            if (this.checked) {
-                ubicacionDiv.style.display = 'block';
-                costoEnvio.style.display = 'block';
-            } else {
-                ubicacionDiv.style.display = 'none';
-                costoEnvio.style.display = 'none';
-            }
-        });
-
-        document.getElementById('generar-enlace').addEventListener('click', function() {
-            const talle1 = document.getElementById('talle').value;
-            const color1 = document.getElementById('color').value;
-			const cantidad1 = document.getElementById('cantidad').value;
-            const envioDomicilio = document.getElementById('envioDomicilio').checked;
-            const ubicacion = document.getElementById('ubicacion').value;
-
-            let mensaje = `¡Hola! Quiero ordenar ${cantidad1} remera Oversize 100% algodón con Talle: ${talle1} y Color: ${color1}.`;
-
-            // Si el usuario ha marcado "Agregar otra prenda", agregamos los detalles de la segunda prenda al mensaje
-            if (document.getElementById('agregarOtraPrenda').checked) {
-                const talle2 = document.getElementById('talle2').value;
-                const color2 = document.getElementById('color2').value;
-			const cantidad2 = document.getElementById('cantidad2').value;
-
-                mensaje += ` También quiero ${cantidad2} remera de Talle: ${talle2} y Color: ${color2}.`;
-            }
-			
-			            if (envioDomicilio) {
-                mensaje += ` Mi ubicación de entrega es: ${ubicacion}.`;
-            } else {
-                mensaje += ' Deseo retirar mi producto en un punto de encuentro.';
-            }
-
-            const mensajeCodificado = encodeURIComponent(mensaje);
-            const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=5492612527052&text=${mensajeCodificado}`;
-            window.open(enlaceWhatsApp, '_blank');
-        });    
-	</script>
-                        <!-- End Pedido Box -->
-        </div>
-        <!-- End Content -->
-        <!-- Hiring -->
-        <div id="hiring" class="parallax-bg3 text-light" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 margin-vert-40">
-                        <h2 class="animate fadeIn" style="text-align: center;">Encuentranos</h2>
-                        <hr>
-                        <p class="animate fadeIn" style="text-align: center;">Actualmente no tenemos un local físico pero puedes encontrarnos en todas las redes sociales. Contáctanos por WhatsApp y 
-						organiza un encuentro para ver y probar las prendas sin compromiso.</p>
-                        <p class="animate fadeInUp" style="text-align: center;">
-                            <button class="btn btn-lg btn-primary" id="irAWatsapp" type="button">Ir a Whatsapp</button>
-								<script>
-								document.getElementById("irAWatsapp").addEventListener("click", function() {
-									window.location.href = "https://wa.me/5492612527052";
-								});
-								</script>
-                        </p>
                     </div>
-                </div>
-            </div>
             <div class="clearfix"></div>
         </div>
         <!-- End Hiring -->
@@ -503,6 +362,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
             <!-- Modernizr -->
             <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+			<!-- Pedido -->
+			<script src="assets/js/pedido.js" type="text/javascript"></script>
             <!-- End JS -->
     </body>
 </html>
