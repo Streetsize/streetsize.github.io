@@ -48,45 +48,43 @@
             <div class="container">
                 <div class="row margin-vert-40">
                     <!-- Main Text -->
-                    <div class="col-md-12">
+                    <div class="col-md-12 text-center">
                         <h2 class="text-center article-title">#STREETSIZE</h2>
                         <p class="text-center">Comodidad, precio y estilo en un solo lugar. Somos una marca originaria de Mendoza 
 						con 3 años de trayectoria orientada a todo aquel que sabe lo que quiere.
 						Nuestra especialidad son las remeras "oversize" que se adaptan a cualquier estilo. Podras
 						encontrar un gran catalogo de más de 10 talles disponibles y una infinidad de colores para que combines
 						como quieras. Encontranos en Mercado Libre, Facebook Marketplace o Instagram.</p>
-						<h3 class="text-center article-title">¿Qué estas esperando?</h3>
+						<h3 class="text-center article-title">¿Qué estas esperando?</h3> <br>
 <img class="fadeInUp animate" alt="" src="assets/img/responsive_homepage.png" id="responsive-image">
                     </div>
                     <!-- End Main Text -->
                 </div>
             </div>
         </div>
-        <!-- Icons -->
-        <div id="icons" class="parallax-bg1 text-light background-primary" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row margin-vert-40">
-                    <!-- Icons -->
-                    <div class="col-md-4 text-center animate fadeInLeft">
-                        <i class="fa-thumbs-up fa-3x color-primary-lighter"></i>
-                        <h2 class="padding-top-10">Calidad</h2>
-                        
-                    </div>
-                    <div class="col-md-4 text-center animate fadeIn">
-                        <i class="fa-users fa-3x color-primary-lighter"></i>
-                        <h2 class="padding-top-10">Atención personalizada</h2>
-                       
-                    </div>
-                    <div class="col-md-4 text-center animate fadeInRight">
-                        <i class="fa-check fa-3x color-primary-lighter"></i>
-                        <h2 class="padding-top-10">Confianza</h2>
-                       
-                    </div>
-                    <!-- End Icons -->
-                </div>
-            </div>
-        </div>
-        <!-- End Icons -->
+		<!--CARROUSEL-->
+			<div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-1" data-slide-to="1"></li>
+			<li data-target="#carousel-example-1" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active"><img src="assets/img/slideshow/slide1.jpg"></div>
+			<div class="item"><img src="assets/img/slideshow/slide2.jpg"></div>
+			<div class="item"><img src="assets/img/slideshow/slide3.jpg"></div>
+		</div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-1" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-1" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+		<!-- FIN CARROUSEL -->
         <!-- Portfolio -->
 <div id="porfolio" class="parallax-bg2" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
     <div class="container">
@@ -143,8 +141,10 @@
     </div>
 </div>
         <!-- End Portfolio -->
-		                        <!-- Pedido Box -->								
-<div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+			<!-- Content -->
+        <div id="content" class="background-white">
+			<!-- Pedido Box -->								
+<div class="col-md-6 col-md-offset-3 col-sm-offset-3" style="margin-top: 20px">
         <form class="login-page" id="pedido-form">
             <div class="login-header margin-bottom-30">
                 <h2>Realiza tu pedido</h2>
@@ -333,9 +333,7 @@
         calcularTotal();
     });
 </script>
-        <!-- End Hiring -->
-			<!-- Content -->
-        <div id="content" class="background-white">
+        <!-- FIN Pedido Box -->
             <div class="container">
                 <div class="row margin-vert-40">
                     <div class="col-md-12">
@@ -348,8 +346,33 @@
 						<p>Atte: Joaquín y Diego</p>
                     </div>
                 </div>
-            </div>		
+            </div>
+		</div>
         <!-- === END CONTENT === -->
+		        <!-- Icons -->
+        <div id="icons" class="parallax-bg1 text-light background-primary" style="background-position: 50% 0%;" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row margin-vert-40">
+                    <!-- Icons -->
+                    <div class="col-md-4 text-center animate fadeInLeft">
+                        <i class="fa-thumbs-up fa-3x color-primary-lighter"></i>
+                        <h2 class="padding-top-10">Calidad</h2>
+                        
+                    </div>
+                    <div class="col-md-4 text-center animate fadeIn">
+                        <i class="fa-users fa-3x color-primary-lighter"></i>
+                        <h2 class="padding-top-10">Atención personalizada</h2>
+                       
+                    </div>
+                    <div class="col-md-4 text-center animate fadeInRight">
+                        <i class="fa-check fa-3x color-primary-lighter"></i>
+                        <h2 class="padding-top-10">Confianza</h2>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Icons -->
         <!-- === BEGIN FOOTER === -->
         <div id="base" class="background-dark text-light">
             <div class="container padding-vert-30">
@@ -357,7 +380,7 @@
                     <!-- Disclaimer -->
                     <div class="col-md-6 margin-bottom-30">
                         <h3 class="margin-bottom-10">Disclaimer</h3>
-                        <p>Esta página no tiene objetivos comerciales y es meramente informativa. Ante cualquier sugerencia/reclamo/contacto, por favor, diríjase a los enlaces de WhatsApp disponibles.</p>
+                        <p>Ante cualquier sugerencia/reclamo/contacto, por favor, diríjase a los enlaces de WhatsApp disponibles.</p>
                         <p>
                     </div>
                     <!-- End Disclaimer -->                    
