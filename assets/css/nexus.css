@@ -79,17 +79,10 @@ body {
 /* Header */
 /*-----------------------------------------------------------------------------------*/
 #header {
-  background: url("../img/header_bg.jpg") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
-  display: table;
-  width: 100%;
-}
-#header .container {
-  display: table-cell;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-  max-width: none;
+    background: url("../img/header_bg.jpg") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
+    background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+    display: table;
+    width: 100%;
 }
 /* Logo */
 .logo {
@@ -103,7 +96,7 @@ body {
   z-index: 20;
 }
 .logo img {
-  margin-bottom: 15px;
+  margin-top: 155px;
 }
 p.site-slogan {
   color: #b1a5bd;
