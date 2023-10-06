@@ -1,5 +1,33 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* Estilos para la pantalla de carga */
+/* CARROUSEL */
+@media (max-width: 767px) {
+  .slide3-mobile {
+    display: block; /* Muestra la imagen "slide3.png" en dispositivos móviles */
+  }
+}
+
+/* Estilos para pantallas grandes (PC) */
+@media (min-width: 768px) {
+  .slide3-mobile .slide2-mobile .slide1-mobile {
+    display: none; /* Oculta la imagen en pantallas grandes */
+  }
+
+  /* Muestra la imagen "slidepc.png" en lugar de la imagen actual */
+  #carousel-example-1 .item:nth-child(1) img {
+    content: url('../img/slideshow/slide1pc.jpg');
+    display: block;
+  }
+  #carousel-example-1 .item:nth-child(2) img {
+    content: url('../img/slideshow/slide2pc.png');
+    display: block;
+  }
+    #carousel-example-1 .item:nth-child(3) img {
+    content: url('../img/slideshow/slide3pc.png');
+    display: block;
+  }
+}
+
 /* Estilo predeterminado para la imagen (tamaño al 100%) */
     .portfolio-item {
         width: 100%; /* Ancho fijo para el contenedor */
