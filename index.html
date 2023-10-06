@@ -77,40 +77,35 @@
 			<div class="item"><img src="assets/img/slideshow/slide3.png"></div>
 		</div>
 	</div>
-	    <script>
+    <script>
         // JavaScript para el desplazamiento táctil del carrousel
         const carousel = document.getElementById('carousel-example-1');
         let startX = 0;
-        let currentX = 0;
+        let currentIndex = 0;
 
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-            currentX = startX;
         });
 
         carousel.addEventListener('touchmove', (e) => {
             const touch = e.touches[0];
             const deltaX = touch.clientX - startX;
-            currentX = touch.clientX;
             const carouselInner = carousel.querySelector('.carousel-inner');
-            carouselInner.style.transform = `translateX(${deltaX}px)`;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100 + (deltaX / carousel.offsetWidth) * 100}%)`;
         });
 
-        carousel.addEventListener('touchend', () => {
-            const deltaX = currentX - startX;
+        carousel.addEventListener('touchend', (e) => {
+            const deltaX = e.changedTouches[0].clientX - startX;
             const threshold = carousel.offsetWidth / 4; // Puedes ajustar este valor según tu preferencia
 
-            if (deltaX > threshold) {
-                // Desplaza a la diapositiva anterior
-                carousel.querySelector('.carousel-control-prev').click();
-            } else if (deltaX < -threshold) {
-                // Desplaza a la siguiente diapositiva
-                carousel.querySelector('.carousel-control-next').click();
-            } else {
-                // Vuelve a la posición inicial
-                const carouselInner = carousel.querySelector('.carousel-inner');
-                carouselInner.style.transform = 'translateX(0)';
+            if (deltaX > threshold && currentIndex > 0) {
+                currentIndex--;
+            } else if (deltaX < -threshold && currentIndex < 2) {
+                currentIndex++;
             }
+
+            const carouselInner = carousel.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
         });
     </script>
 		<!-- FIN CARROUSEL -->
