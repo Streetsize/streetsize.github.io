@@ -62,41 +62,54 @@
                 </div>
             </div>
         </div>
-		<!--CARROUSEL-->
-			<div id="carousel-example-1" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-example-1" data-slide-to="1"></li>
-			<li data-target="#carousel-example-1" data-slide-to="2"></li>
-		</ol>
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
-			<div class="item active"><img src="assets/img/slideshow/slide1.png"></div>
-			<div class="item"><img src="assets/img/slideshow/slide2.png"></div>
-			<div class="item"><img src="assets/img/slideshow/slide3.png"></div>
-		</div>
-	</div>
+<!-- CARROUSEL -->
+    <div id="carousel-example-1" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active"><img src="assets/img/slideshow/slide1.png"></div>
+            <div class="item"><img src="assets/img/slideshow/slide2.png"></div>
+            <div class="item"><img src="assets/img/slideshow/slide3.png"></div>
+        </div>
+    </div>
+    <!-- FIN CARROUSEL -->
+
     <script>
-        // JavaScript para el desplazamiento táctil del carrousel
+        // JavaScript para el desplazamiento táctil y autoplay del carrousel
         const carousel = document.getElementById('carousel-example-1');
         let startX = 0;
         let currentIndex = 0;
+        const intervalDuration = 5000; // Duración del intervalo en milisegundos
+
+        // Función para avanzar al siguiente slide
+        function nextSlide() {
+            if (currentIndex < 2) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+
+            const carouselInner = carousel.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Iniciar el intervalo de autoplay
+        const autoplayInterval = setInterval(nextSlide, intervalDuration);
 
         carousel.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
+            clearInterval(autoplayInterval); // Detener el autoplay al tocar el carrousel
         });
 
         carousel.addEventListener('touchmove', (e) => {
             const touch = e.touches[0];
             const deltaX = touch.clientX - startX;
             const carouselInner = carousel.querySelector('.carousel-inner');
-            carouselInner.style.transform = `translateX(-${currentIndex * 100 + (deltaX / carousel.offsetWidth) * 100}%)`;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100 + (deltaX / window.innerWidth) * 100}%)`;
         });
 
         carousel.addEventListener('touchend', (e) => {
             const deltaX = e.changedTouches[0].clientX - startX;
-            const threshold = carousel.offsetWidth / 4; // Puedes ajustar este valor según tu preferencia
+            const threshold = window.innerWidth / 4; // Puedes ajustar este valor según tu preferencia
 
             if (deltaX > threshold && currentIndex > 0) {
                 currentIndex--;
@@ -106,6 +119,11 @@
 
             const carouselInner = carousel.querySelector('.carousel-inner');
             carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Reanudar el autoplay después de un breve retraso
+            setTimeout(() => {
+                autoplayInterval = setInterval(nextSlide, intervalDuration);
+            }, 2000); // 2 segundos de retraso
         });
     </script>
 		<!-- FIN CARROUSEL -->
