@@ -7,7 +7,7 @@
   }
 }
 
-/* Estilos para pantallas grandes (PC) */
+/* Estilos para pantallas grandes (PC) **/
 @media (min-width: 768px) {
   .slide3-mobile .slide2-mobile .slide1-mobile {
     display: none; /* Oculta la imagen en pantallas grandes */
