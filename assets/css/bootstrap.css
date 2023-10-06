@@ -18,6 +18,11 @@
 }
     form.login-page {
         margin-bottom: 20px; /* Agrega un margen inferior de 5px */
+    }
+
+        .portfolio-item.col-md-6 img {
+            width: 100%; /* Ajusta el tamaño de las imágenes al 125% para restaurar el tamaño original */
+        }
     }	
 #responsive-image {
     display: block;
