@@ -81,67 +81,64 @@ body {
 /*-----------------------------------------------------------------------------------*/
 @supports (-webkit-touch-callout: inherit) {
   .paral {
-    background-attachment: scroll;
+  background-attachment: scroll;
   }
 }
-
 .widget-wrap {
-  background-attachment: fixed;
-  /* Otras reglas para .widget-wrap */
+   background-attachment: fixed;
+   ...
+   ...
 }
-
 @supports (-webkit-overflow-scrolling: touch) {
   .widget-wrap {
-    background-attachment: scroll;
-    /* Otras reglas para .widget-wrap cuando se cumple la condición */
+  background-attachment: scroll;
   }
 }
-
 #header {
-  background: url("../img/header_bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale')";
+    background: url("../img/header_bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale')";
 }
+
 #header .container {
-  display: table-cell;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  width: 100%;
-  max-width: none;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    height: 100%;
 }
+
 /* Logo */
 .logo {
-  text-align: center;
-  padding-bottom: 30px;
+    text-align: center;
 }
+
 .logo a {
-  top: 29px;
-  display: block;
-  position: relative;
-  z-index: 20;
+    display: block;
+    position: relative;
+    z-index: 20;
 }
+
 .logo img {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
+
 p.site-slogan {
-  color: #b1a5bd;
-  font-size: 11px;
-  letter-spacing: 8px;
-  margin: 0;
-  padding: 0;
-  right: 15px;
-  text-align: right;
-  top: 68px;
-  position: absolute;
-  z-index: 20;
-  white-space: nowrap;
+    color: #b1a5bd;
+    font-size: 11px;
+    letter-spacing: 8px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 20;
+    white-space: nowrap;
 }
+
 /* Social Icons */
 #social {
   position: relative;
