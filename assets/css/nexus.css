@@ -94,7 +94,8 @@ body {
   background-attachment: scroll;
   }
 }
-#header {
+#header::before {
+    content: "";
     background: url("../img/header_bg.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: scroll;
@@ -103,6 +104,12 @@ body {
     -o-background-size: cover;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale')";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca el fondo detrás de todo */
 }
 
 #header .container {
