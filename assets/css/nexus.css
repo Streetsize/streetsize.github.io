@@ -79,7 +79,7 @@ body {
 /* Header */
 /*-----------------------------------------------------------------------------------*/
 #header {
-  background: url("../img/header_bg.png") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
+  background: url("../img/header_bg.gif") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
