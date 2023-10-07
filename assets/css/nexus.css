@@ -79,16 +79,33 @@ body {
 /*-----------------------------------------------------------------------------------*/
 /* Header */
 /*-----------------------------------------------------------------------------------*/
+@supports (-webkit-touch-callout: inherit) {
+  .paral {
+    background-attachment: scroll;
+  }
+}
+
+.widget-wrap {
+  background-attachment: fixed;
+  /* Otras reglas para .widget-wrap */
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .widget-wrap {
+    background-attachment: scroll;
+    /* Otras reglas para .widget-wrap cuando se cumple la condición */
+  }
+}
+
 #header {
-    background: url("../img/header_bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-	webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg',
-	sizingMethod='scale');
-	-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg',
-	sizingMethod='scale')"
+  background: url("../img/header_bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale')";
 }
 #header .container {
   display: table-cell;
