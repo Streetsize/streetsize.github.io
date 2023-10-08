@@ -1590,7 +1590,7 @@ a.slicknav_item [class*=" fa-"] {
   list-style: none outside none;
 }
 .portfolio-item figure {
-  border: 2px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0px;
   margin: 1px;
   padding: 0px;
