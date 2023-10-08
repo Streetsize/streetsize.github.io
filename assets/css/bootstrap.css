@@ -811,6 +811,13 @@ pre code {
   padding-left: 20px;
   padding-right: 20px;
 }
+.containerfoot {
+  background-color: #ffffff;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 @media (min-width: 768px) {
   .container {
     width: 760px;

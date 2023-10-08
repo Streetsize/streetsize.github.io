@@ -1,0 +1,5 @@
+#icons {
+    background-color: #ffffff; /* Fondo blanco */
+    position: relative;
+    z-index: 20; /* Ajusta el z-index según sea necesario */
+}
