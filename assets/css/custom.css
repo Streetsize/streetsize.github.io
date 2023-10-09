@@ -4,3 +4,17 @@
     z-index: 20; /* Ajusta el z-index según sea necesario */
 }
 
+/* Para la fuente Raleway */
+@font-face {
+  font-family: 'Raleway';
+  src: url('http://fonts.googleapis.com/css?family=Raleway:100,300,400') format('woff2');
+  font-display: swap;
+}
+
+/* Para la fuente Roboto */
+@font-face {
+  font-family: 'Roboto';
+  src: url('http://fonts.googleapis.com/css?family=Roboto:400,300') format('woff2');
+  font-display: swap;
+}
+
