@@ -68,13 +68,13 @@ body {
   padding-right: 20px !important;
 }
 .parallax-bg1 {
-  background: url("../img/parallax-bg1.png") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
+  background: url("../img/parallax-bg1.webp") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
 }
 .parallax-bg2 {
-  background: url("../img/parallax-bg2.png") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
+  background: url("../img/parallax-bg2.webp") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
 }
 .parallax-bg3 {
-  background: url("../img/parallax-bg3.png") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
+  background: url("../img/parallax-bg3.webp") no-repeat fixed 0 0 rgba(0, 0, 0, 0);
 }
 /*-----------------------------------------------------------------------------------*/
 /* Header */
@@ -96,14 +96,14 @@ body {
 }
 #header::before {
     content: "";
-    background: url("../img/header_bg.jpg") no-repeat center center fixed;
+    background: url("../img/header_bg.webp") no-repeat center center fixed;
     background-size: cover;
     background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale');
-    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.jpg', sizingMethod='scale')";
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.webp', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/header_bg.webp', sizingMethod='scale')";
     position: fixed;
     top: 0;
     left: 0;
@@ -1220,7 +1220,7 @@ p {
   margin-bottom: 16px;
 }
 hr {
-  background: url("../img/hr.png") no-repeat scroll 50% 0 transparent;
+  background: url("../img/hr.webp") no-repeat scroll 50% 0 transparent;
   border: medium none;
   height: 19px;
   margin: 20px 0 5px;

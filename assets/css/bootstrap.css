@@ -15,15 +15,15 @@
 
   /* Muestra la imagen "slidepc.png" en lugar de la imagen actual */
   #carousel-example-1 .item:nth-child(1) img {
-    content: url('../img/slideshow/slide1pc.jpg');
+    content: url('../img/slideshow/slide1pc.webp');
     display: block;
   }
   #carousel-example-1 .item:nth-child(2) img {
-    content: url('../img/slideshow/slide2pc.png');
+    content: url('../img/slideshow/slide2pc.webp');
     display: block;
   }
     #carousel-example-1 .item:nth-child(3) img {
-    content: url('../img/slideshow/slide3pc.png');
+    content: url('../img/slideshow/slide3pc.webp');
     display: block;
   }
 }

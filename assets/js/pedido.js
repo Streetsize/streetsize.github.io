@@ -12,25 +12,25 @@
 
         // Definir un objeto que mapea los colores a las rutas de las imágenes para la primera prenda
         const colorImagenes = {
-            Blanco: 'assets/img/remera/blanco.png',
-            Negro: 'assets/img/remera/negro.png',
-			AzulPetroleo: 'assets/img/remera/azulpetroleo.png',
-			Mostaza: 'assets/img/remera/mostaza.png',
-			Celeste: 'assets/img/remera/celeste.png',
-			Bordo: 'assets/img/remera/bordo.png',
-			Rosado: 'assets/img/remera/rosado.png',
+            Blanco: 'assets/img/remera/blanco.webp',
+            Negro: 'assets/img/remera/negro.webp',
+			AzulPetroleo: 'assets/img/remera/azulpetroleo.webp',
+			Mostaza: 'assets/img/remera/mostaza.webp',
+			Celeste: 'assets/img/remera/celeste.webp',
+			Bordo: 'assets/img/remera/bordo.webp',
+			Rosado: 'assets/img/remera/rosado.webp',
             // Agrega más rutas de imágenes para otros colores aquí
         };
 
         // Definir un objeto que mapea los colores a las rutas de las imágenes para la segunda prenda
         const colorImagenes2 = {
-            Blanco: 'assets/img/remera/blanco.png',
-            Negro: 'assets/img/remera/negro.png',
-			AzulPetroleo: 'assets/img/remera/azulpetroleo.png',
-			Mostaza: 'assets/img/remera/mostaza.png',
-			Celeste: 'assets/img/remera/celeste.png',
-			Bordo: 'assets/img/remera/bordo.png',
-			Rosado: 'assets/img/remera/rosado.png',
+            Blanco: 'assets/img/remera/blanco.webp',
+            Negro: 'assets/img/remera/negro.webp',
+			AzulPetroleo: 'assets/img/remera/azulpetroleo.webp',
+			Mostaza: 'assets/img/remera/mostaza.webp',
+			Celeste: 'assets/img/remera/celeste.webp',
+			Bordo: 'assets/img/remera/bordo.webp',
+			Rosado: 'assets/img/remera/rosado.webp',
             // Agrega más rutas de imágenes para otros colores aquí
         };
 
