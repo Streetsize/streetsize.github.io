@@ -116,7 +116,7 @@
                 <figure class="animate fadeInLeft">
                     <div class="grid-image">
                         <div class="featured-info">
-                            <div class="info-wrapper">Black Signature 23' <br> $3500</div>
+                            <div class="info-wrapper">Black Signature 23' <br> </div>
                         </div>
                         <img alt="imagen decorativa" src="assets/img/frontpage/1.webp">
                     </div>
@@ -128,7 +128,7 @@
                 <figure class="animate fadeInUp">
                     <div class="grid-image">
                         <div class="featured-info">
-                            <div class="info-wrapper">Black Signature 23' <br> $3500</div>
+                            <div class="info-wrapper">Black Signature 23' <br> </div>
                         </div>
                         <img alt="imagen decorativa" src="assets/img/frontpage/2.webp">
                     </div>
@@ -140,7 +140,7 @@
                 <figure class="animate fadeInRight">
                     <div class="grid-image">
                         <div class="featured-info">
-                            <div class="info-wrapper">Black Signature 23' <br> $3500</div>
+                            <div class="info-wrapper">Black Signature 23' <br> </div>
                         </div>
                         <img alt="imagen decorativa" src="assets/img/frontpage/3.webp">
                     </div>
@@ -152,7 +152,7 @@
                 <figure class="animate fadeInLeft">
                     <div class="grid-image">
                         <div class="featured-info">
-                            <div class="info-wrapper">Celeste 23' <br> $3500</div>
+                            <div class="info-wrapper">Celeste 23' <br> </div>
                         </div>
                         <img alt="imagen decorativa" src="assets/img/frontpage/4.webp">
                     </div>
@@ -290,7 +290,7 @@
                 <h3>Total</h3>
             </div>
             <div class="col-md-6">
-                <h3 id="total">$3,500</h3>
+                <h3 id="total">$3,700</h3><h3 id="precioTachado"><s>$7,400</s></h3>
             </div>
         </div>
 
@@ -304,28 +304,31 @@
         </form>
     </div>
                     </div>
-<script>
-    // Función para calcular y actualizar el total
-    function calcularTotal() {
-        const cantidad1 = parseInt(document.getElementById("cantidad").value);
-        const precioUnitario = 3500;
-        const envio = document.getElementById("envioDomicilio").checked ? 400 : 0;
-        
-        let total = cantidad1 * precioUnitario;
-        
-        if (document.getElementById("agregarOtraPrenda").checked) {
-            const cantidad2 = parseInt(document.getElementById("cantidad2").value);
-            total += cantidad2 * precioUnitario;
-        }
-        
-        total += envio;
-        
-        // Actualiza el texto en el elemento "total"
-        document.getElementById("total").textContent = "$" + total.toLocaleString();
-    }
+	<script>
+	// Función para calcular y actualizar el total
+	function calcularTotal() {
+		const cantidad1 = parseInt(document.getElementById("cantidad").value);
+		const precioUnitario = 3700;
+		const envío = document.getElementById("envioDomicilio").checked ? 400 : 0;
+
+		let total = cantidad1 * precioUnitario;
+
+		if (document.getElementById("agregarOtraPrenda").checked) {
+			const cantidad2 = parseInt(document.getElementById("cantidad2").value);
+			total += cantidad2 * precioUnitario; // Agrega el costo de la segunda prenda al total
+		}
+
+		total += envío;
+
+		// Actualiza el texto en el elemento "total"
+		document.getElementById("total").textContent = "$" + total.toLocaleString();
+		document.getElementById("precioTachado").innerHTML = `<s>$${(total * 2).toLocaleString()}`;
+		
+	}
 
     // Escucha el evento "input" en el campo de cantidad y en la casilla de envío
     document.getElementById("cantidad").addEventListener("input", calcularTotal);
+	document.getElementById("cantidad2").addEventListener("input", calcularTotal)
     document.getElementById("envioDomicilio").addEventListener("change", calcularTotal);
     
     // Muestra u oculta los campos de ubicación y costo de envío según la casilla de envío
