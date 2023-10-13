@@ -304,63 +304,65 @@
         </form>
     </div>
                     </div>
-<script type="module">
-    import { costoEnvio, precioOriginal, precioDescuento } from './precios.js';
+		<script type="module">
+			// Importa los datos de precios desde el archivo JSON
+			import precios from './precios.json';
 
-    // Función para calcular y actualizar el total
-    function calcularTotal() {
-        const cantidad1 = parseInt(document.getElementById("cantidad").value);
-        const precioUnitario = precioDescuento; // Usa precioDescuento de precios.js
-        const envío = document.getElementById("envioDomicilio").checked ? costoEnvio : 0;
+			// Función para calcular y actualizar el total
+			function calcularTotal() {
+				const cantidad1 = parseInt(document.getElementById("cantidad").value);
+				const precioUnitario = precios.precioDescuento; // Usa precioDescuento del archivo JSON
+				const envío = document.getElementById("envioDomicilio").checked ? precios.costoEnvio : 0;
 
-        let total = cantidad1 * precioUnitario;
+				let total = cantidad1 * precioUnitario;
 
-        if (document.getElementById("agregarOtraPrenda").checked) {
-            const cantidad2 = parseInt(document.getElementById("cantidad2").value);
-            total += cantidad2 * precioUnitario; // Agrega el costo de la segunda prenda al total
-        }
+				if (document.getElementById("agregarOtraPrenda").checked) {
+					const cantidad2 = parseInt(document.getElementById("cantidad2").value);
+					total += cantidad2 * precioUnitario; // Agrega el costo de la segunda prenda al total
+				}
 
-        total += envío;
+				total += envío;
 
-        // Actualiza el texto en el elemento "total"
-        document.getElementById("total").textContent = "$" + total.toLocaleString();
-        document.getElementById("precioTachado").innerHTML = `<s>$${(total * 2).toLocaleString()}`;
-    }
+				// Actualiza el texto en el elemento "total"
+				document.getElementById("total").textContent = "$" + total.toLocaleString();
+				document.getElementById("precioTachado").innerHTML = `<s>$${(total * 2).toLocaleString()}`;
+			}
 
-    // Escucha los eventos "input" y "change" en los campos relevantes
-    document.getElementById("cantidad").addEventListener("input", calcularTotal);
-    document.getElementById("cantidad2").addEventListener("input", calcularTotal);
-    document.getElementById("envioDomicilio").addEventListener("change", calcularTotal);
-    document.getElementById("agregarOtraPrenda").addEventListener("change", calcularTotal);
+			// Escucha los eventos "input" y "change" en los campos relevantes
+			document.getElementById("cantidad").addEventListener("input", calcularTotal);
+			document.getElementById("cantidad2").addEventListener("input", calcularTotal);
+			document.getElementById("envioDomicilio").addEventListener("change", calcularTotal);
+			document.getElementById("agregarOtraPrenda").addEventListener("change", calcularTotal);
 
-    // Muestra u oculta los campos de ubicación y costo de envío según la casilla de envío
-    document.getElementById("envioDomicilio").addEventListener("change", function() {
-        const ubicacionDiv = document.getElementById("ubicacionDiv");
-        const costoEnvio = document.getElementById("costoEnvio");
-        if (this.checked) {
-            ubicacionDiv.style.display = "block";
-            costoEnvio.style.display = "block";
-        } else {
-            ubicacionDiv.style.display = "none";
-            costoEnvio.style.display = "none";
-        }
-        calcularTotal();
-    });
+			// Muestra u oculta los campos de ubicación y costo de envío según la casilla de envío
+			document.getElementById("envioDomicilio").addEventListener("change", function() {
+				const ubicacionDiv = document.getElementById("ubicacionDiv");
+				const costoEnvio = document.getElementById("costoEnvio");
+				if (this.checked) {
+					ubicacionDiv.style.display = "block";
+					costoEnvio.style.display = "block";
+				} else {
+					ubicacionDiv.style.display = "none";
+					costoEnvio.style.display = "none";
+				}
+				calcularTotal();
+			});
 
-    // Muestra u oculta el segundo conjunto de campos según la casilla "Agregar otra prenda"
-    document.getElementById("agregarOtraPrenda").addEventListener("change", function() {
-        const segundaPrenda = document.getElementById("segundaPrenda");
-        if (this.checked) {
-            segundaPrenda.style.display = "block";
-        } else {
-            segundaPrenda.style.display = "none";
-        }
-        calcularTotal();
-    });
+			// Muestra u oculta el segundo conjunto de campos según la casilla "Agregar otra prenda"
+			document.getElementById("agregarOtraPrenda").addEventListener("change", function() {
+				const segundaPrenda = document.getElementById("segundaPrenda");
+				if (this.checked) {
+					segundaPrenda.style.display = "block";
+				} else {
+					segundaPrenda.style.display = "none";
+				}
+				calcularTotal();
+			});
 
-    // Llama a calcularTotal al cargar la página para calcular el total inicial
-    calcularTotal();
-</script>
+			// Llama a calcularTotal al cargar la página para calcular el total inicial
+			calcularTotal();
+		</script>
+
 
         <!-- FIN Pedido Box -->
             <div style="background-color: #ffffff; margin-top: -20px">
