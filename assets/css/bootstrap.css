@@ -1,5 +1,15 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /* Estilos para la pantalla de carga */
+.GeneratedMarquee {
+font-family: inherit;
+font-size: 24px;
+line-height:1.3em;
+color:White;
+background-color:Black;
+padding:0;
+position: fixed;
+z-index: 99;
+
 /* CARROUSEL */
 @media (max-width: 767px) {
   .slide3-mobile {

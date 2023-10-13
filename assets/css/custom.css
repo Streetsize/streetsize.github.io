@@ -17,13 +17,3 @@
   src: url('http://fonts.googleapis.com/css?family=Roboto:400,300') format('woff2');
   font-display: swap;
 }
-
-.GeneratedMarquee {
-font-family: inherit;
-font-size: 24px;
-line-height:1.3em;
-color:White;
-background-color:Black;
-padding:0;
-position: fixed;
-z-index: 99;
