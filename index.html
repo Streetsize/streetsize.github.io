@@ -281,7 +281,7 @@
                     <input placeholder="Ubicación de entrega" class="form-control" type="text" id="ubicacion">
                 </div>
 			<div class="alert alert-info" id="costoEnvio" style="display: none;">
-El costo de envío es de $<span id="precioEnvio">500</span>
+El costo de envío es de $<span id="precioEnvio">400</span>
 </div>
             </div>
 
@@ -290,7 +290,7 @@ El costo de envío es de $<span id="precioEnvio">500</span>
                 <h3>Total - 50% OFF</h3>
             </div>
 		<div class="col-md-6">
-			<h3>$<span id="total">3500.0</span>&nbsp;&nbsp;$<s><span id="precioTachado"><s>7000.0</s></span></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></s></h3>
+			<h3>$<span id="total">3700.0</span>&nbsp;&nbsp;$<s><span id="precioTachado"><s>7400.0</s></span></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></h3></s></h3>
 		</div>
         </div>
         <div class="row">
@@ -307,8 +307,8 @@ El costo de envío es de $<span id="precioEnvio">500</span>
 	// Función para calcular y actualizar el total
 	function calcularTotal() {
 		const cantidad1 = parseInt(document.getElementById("cantidad").value);
-		const precioUnitario = 3500.0;
-		const envío = document.getElementById("envioDomicilio").checked ? 500 : 0;
+		const precioUnitario = 3700.0;
+		const envío = document.getElementById("envioDomicilio").checked ? 400 : 0;
 
 		let total = cantidad1 * precioUnitario;
 
