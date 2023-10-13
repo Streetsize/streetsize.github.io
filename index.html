@@ -29,7 +29,7 @@
 	<!-- Template CSS -->
 	<link async rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.css">
-	<link async rel="stylesheet" href="assets/css/nexus.css">
+	<link rel="stylesheet" href="assets/css/nexus.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link async rel="stylesheet" href="assets/css/custom.css">
 	<!-- Google Fonts-->
@@ -273,27 +273,27 @@
             </div>
 
             <!-- Campos para la ubicación y costo de envío (inicialmente ocultos) -->
-            <div id="ubicacionDiv" style="display: none;">
-                <div class="input-group margin-bottom-20">
-                    <span class="input-group-addon">
-                        <i class="fa fa-map-marker"></i>
-                    </span>
-                    <input placeholder="Ubicación de entrega" class="form-control" type="text" id="ubicacion">
-                </div>
-                <div class="alert alert-info" id="costoEnvio" style="display: none;">
-                    El costo de envío es de $400.
-                </div>
-            </div>
+		<div id="ubicacionDiv" style="display: none;">
+			<div class="input-group margin-bottom-20">
+				<span class="input-group-addon">
+					<i class="fa fa-map-marker"></i>
+				</span>
+				<input placeholder="Ubicación de entrega" class="form-control" type="text" id="ubicacion">
+			</div>
+			<div class="alert alert-info" id="costoEnvio" style="display: none;">
+				El costo de envío es de $<span id="costoEnvioValor"></span>.
+			</div>
+		</div>
 
-            <div class="row">
-            <div class="col-md-6">
-                <h3>Total - 50% OFF</h3>
-            </div>
-            <div class="col-md-6">
-                <h3 id="total">$3,700</h3><h3 id="precioTachado"><s>$7,400</s></h3>
-            </div>
-        </div>
-
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Total - 50% OFF</h3>
+			</div>
+			<div class="col-md-6">
+				<h3 id="total">$<span id="precioDescuentoValor"></span></h3>
+				<h3 id="precioTachado"><s>$<span id="precioOriginalValor"></span></s></h3>
+			</div>
+		</div>
         <div class="row">
             <div class="col-md-6">
                 <button class="btn btn-primary pull-right" type="button" id="generar-enlace">Continuar</button>
@@ -304,33 +304,35 @@
         </form>
     </div>
                     </div>
-	<script>
-	// Función para calcular y actualizar el total
-	function calcularTotal() {
-		const cantidad1 = parseInt(document.getElementById("cantidad").value);
-		const precioUnitario = 3700;
-		const envío = document.getElementById("envioDomicilio").checked ? 400 : 0;
+<script type="module">
+    import { costoEnvio, precioOriginal, precioDescuento } from './precios.js';
 
-		let total = cantidad1 * precioUnitario;
+    // Función para calcular y actualizar el total
+    function calcularTotal() {
+        const cantidad1 = parseInt(document.getElementById("cantidad").value);
+        const precioUnitario = precioDescuento; // Usa precioDescuento de precios.js
+        const envío = document.getElementById("envioDomicilio").checked ? costoEnvio : 0;
 
-		if (document.getElementById("agregarOtraPrenda").checked) {
-			const cantidad2 = parseInt(document.getElementById("cantidad2").value);
-			total += cantidad2 * precioUnitario; // Agrega el costo de la segunda prenda al total
-		}
+        let total = cantidad1 * precioUnitario;
 
-		total += envío;
+        if (document.getElementById("agregarOtraPrenda").checked) {
+            const cantidad2 = parseInt(document.getElementById("cantidad2").value);
+            total += cantidad2 * precioUnitario; // Agrega el costo de la segunda prenda al total
+        }
 
-		// Actualiza el texto en el elemento "total"
-		document.getElementById("total").textContent = "$" + total.toLocaleString();
-		document.getElementById("precioTachado").innerHTML = `<s>$${(total * 2).toLocaleString()}`;
-		
-	}
+        total += envío;
 
-    // Escucha el evento "input" en el campo de cantidad y en la casilla de envío
+        // Actualiza el texto en el elemento "total"
+        document.getElementById("total").textContent = "$" + total.toLocaleString();
+        document.getElementById("precioTachado").innerHTML = `<s>$${(total * 2).toLocaleString()}`;
+    }
+
+    // Escucha los eventos "input" y "change" en los campos relevantes
     document.getElementById("cantidad").addEventListener("input", calcularTotal);
-	document.getElementById("cantidad2").addEventListener("input", calcularTotal)
+    document.getElementById("cantidad2").addEventListener("input", calcularTotal);
     document.getElementById("envioDomicilio").addEventListener("change", calcularTotal);
-    
+    document.getElementById("agregarOtraPrenda").addEventListener("change", calcularTotal);
+
     // Muestra u oculta los campos de ubicación y costo de envío según la casilla de envío
     document.getElementById("envioDomicilio").addEventListener("change", function() {
         const ubicacionDiv = document.getElementById("ubicacionDiv");
@@ -344,7 +346,7 @@
         }
         calcularTotal();
     });
-    
+
     // Muestra u oculta el segundo conjunto de campos según la casilla "Agregar otra prenda"
     document.getElementById("agregarOtraPrenda").addEventListener("change", function() {
         const segundaPrenda = document.getElementById("segundaPrenda");
@@ -355,7 +357,11 @@
         }
         calcularTotal();
     });
+
+    // Llama a calcularTotal al cargar la página para calcular el total inicial
+    calcularTotal();
 </script>
+
         <!-- FIN Pedido Box -->
             <div style="background-color: #ffffff; margin-top: -20px">
 			<div class="container">

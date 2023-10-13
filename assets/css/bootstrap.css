@@ -9,13 +9,13 @@ background-color:Black;
 padding:0;
 position: fixed;
 z-index: 99;
-
+}
 /* CARROUSEL */
 @media (max-width: 767px) {
   .slide3-mobile {
     display: block; /* Muestra la imagen "slide3.png" en dispositivos móviles */
-  }
-}
+  
+}}
 
 /* Estilos para pantallas grandes (PC) **/
 @media (min-width: 768px) {

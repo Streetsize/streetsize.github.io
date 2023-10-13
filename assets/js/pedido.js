@@ -1,5 +1,6 @@
     // Asegurarse de que el código se ejecute después de que el DOM esté listo
     document.addEventListener('DOMContentLoaded', function() {
+
         // Obtener referencia al elemento de imagen de la primera prenda
         const imagenRemera = document.getElementById('imagenRemera');
         // Obtener referencia al elemento de imagen de la segunda prenda
