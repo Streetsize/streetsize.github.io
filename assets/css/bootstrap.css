@@ -1,4 +1,27 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* Estilo predeterminado para la imagen (tamaño al 100%) */
+    .portfolio-item {
+        width: 100%; /* Ancho fijo para el contenedor */
+        height: 100%; /* Altura fija para el contenedor */
+    }
+
+    .portfolio-item img {
+        width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+        height: 100%; /* La imagen ocupa todo el alto del contenedor */
+        object-fit: cover; /* La imagen se ajusta y recorta según el tamaño del contenedor */
+    }
+@media (max-width: 767px) {
+    .mobile-hide {
+        display: none;
+    }
+}
+    form.login-page {
+        margin-bottom: 20px; /* Agrega un margen inferior de 5px */
+    }
+        .portfolio-item.col-md-6 img {
+            width: 100%; /* Ajusta el tamaño de las imágenes al 125% para restaurar el tamaño original */
+        }
+  	
 /* Estilos para la pantalla de carga */
 .GeneratedMarquee {
 font-family: inherit;
@@ -37,30 +60,6 @@ z-index: 99;
     display: block;
   }
 }
-
-/* Estilo predeterminado para la imagen (tamaño al 100%) */
-    .portfolio-item {
-        width: 100%; /* Ancho fijo para el contenedor */
-        height: 100%; /* Altura fija para el contenedor */
-    }
-
-    .portfolio-item img {
-        width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-        height: 100%; /* La imagen ocupa todo el alto del contenedor */
-        object-fit: cover; /* La imagen se ajusta y recorta según el tamaño del contenedor */
-    }
-@media (max-width: 767px) {
-    .mobile-hide {
-        display: none;
-    }
-}
-    form.login-page {
-        margin-bottom: 20px; /* Agrega un margen inferior de 5px */
-    }
-        .portfolio-item.col-md-6 img {
-            width: 100%; /* Ajusta el tamaño de las imágenes al 125% para restaurar el tamaño original */
-        }
-    }	
 #responsive-image {
     display: block;
     margin-left: auto;
