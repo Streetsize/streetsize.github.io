@@ -77,7 +77,7 @@
     <body>
 	<!-- MARQUESINA -->
 	<marquee class="GeneratedMarquee" direction="left" scrollamount="5.2" behavior="scroll">
-	&nbsp;&nbsp;&nbsp;PROMOCIÓN DÍA DE LA MADRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;PROMOCIÓN APERTURA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;50% OFF &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;Valido por tiempo limitado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 	<span id="countdown"></span>
@@ -245,8 +245,32 @@
 			<form class="login-page" id="pedido-form">
 				<div class="login-header margin-bottom-30">
                 <h2>Realiza tu pedido</h2>
+				       <a href="#" id="medidas-link">Medidas</a>
+<div class="popup" id="medidas-popup">
+    <span class="close-popup" id="close-popup">&times;</span>
+    <img src="medidasoversize2023.webp" alt="Medidas">
+</div>
 				</div>
+<script>
+        // Mostrar la ventana modal al hacer clic en "Medidas"
+        document.getElementById("medidas-link").addEventListener("click", function (event) {
+            document.getElementById("medidas-popup").style.display = "block";
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        });
 
+        // Cerrar la ventana modal al hacer clic en cualquier parte de la página
+        document.body.addEventListener("click", function (event) {
+            if (event.target === document.getElementById("medidas-popup")) {
+                document.getElementById("medidas-popup").style.display = "none";
+            }
+        });
+
+        // Cerrar la ventana modal al hacer clic en el botón de cierre
+        document.getElementById("close-popup").addEventListener("click", function () {
+            document.getElementById("medidas-popup").style.display = "none";
+        });
+</script>
+			
             <div class="col-md-6">
                 <h3 style="margin-bottom: 3px">Talle</h3>
             </div>
