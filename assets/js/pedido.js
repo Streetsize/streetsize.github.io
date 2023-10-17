@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const envioDomicilio = document.getElementById('envioDomicilio').checked;
         const ubicacion = document.getElementById('ubicacion').value;
 
-        let mensaje = `¡Hola! Mi pedido es el siguiente:%0A%0A -${cantidad1} REMERA Talle: *${talle1}* Color: *${color1}*.`;
+        let mensaje = `¡Hola! Mi pedido es el siguiente:\n\n-${cantidad1} REMERA Talle: *${talle1}* Color: *${color1}*.`;
 
         // Si el usuario ha marcado "Agregar otra prenda", agregamos los detalles de la segunda prenda al mensaje
         if (document.getElementById('agregarOtraPrenda').checked) {
@@ -152,9 +152,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (envioDomicilio) {
-            mensaje += `%0A%0A Mi ubicación de entrega es: ${ubicacion}.%0A%0AAguardare indicaciones para realizar el pago.`;
+            mensaje += `\n\nMi ubicación de entrega es: ${ubicacion}.\n\nAguardare indicaciones para realizar el pago.`;
         } else {
-            mensaje += '%0A%0ADeseo retirar mi producto en un punto de encuentro.%0A%0AAguardare indicaciones para realizar el pago.';
+            mensaje += '%0A%0ADeseo retirar mi producto en un punto de encuentro.\n\nAguardare indicaciones para realizar el pago.';
         }
 
         const mensajeCodificado = encodeURIComponent(mensaje);
