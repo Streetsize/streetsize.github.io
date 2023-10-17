@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const color2 = document.getElementById('color2').value;
             const cantidad2 = document.getElementById('cantidad2').value;
 
-            mensaje += `%0A%0A-${cantidad2} REMERA Talle: *${talle2}* Color: *${color2}*.`;
+            mensaje += `\n\n-${cantidad2} REMERA Talle: *${talle2}* Color: *${color2}*.`;
         }
 
         if (envioDomicilio) {
