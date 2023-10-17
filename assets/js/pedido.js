@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (envioDomicilio) {
             mensaje += `\n\nMi ubicación de entrega es: ${ubicacion}.\n\nAguardare indicaciones para realizar el pago.`;
         } else {
-            mensaje += '%0A%0ADeseo retirar mi producto en un punto de encuentro.\n\nAguardare indicaciones para realizar el pago.';
+            mensaje += '\n\nDeseo retirar mi producto en un punto de encuentro.\n\nAguardare indicaciones para realizar el pago.';
         }
 
         const mensajeCodificado = encodeURIComponent(mensaje);
