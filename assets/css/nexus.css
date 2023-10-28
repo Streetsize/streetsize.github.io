@@ -31,6 +31,43 @@ TABLE OF CONTENTS
 /*-----------------------------------------------------------------------------------*/
 /* Basic */
 /*-----------------------------------------------------------------------------------*/
+.popupig {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.popupig-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+	z-index: 99999;
+	display: block;
+}
+#instagram-link {
+    color: blue; /* Color del enlace (azul) */
+    text-decoration: underline; /* Subrayado del enlace */
+}
+
 /*POPUP*/
     #medidas-link {
         color: blue; /* Color azul */
