@@ -1,7 +1,7 @@
 // Función para calcular y actualizar el total
 function calcularTotal() {
     const cantidad1 = parseInt(document.getElementById("cantidad").value);
-    const precioUnitario = 4500.0;
+    const precioUnitario = 5000.0;
     const envío = document.getElementById("envioDomicilio").checked ? 500 : 0;
 
     let total = cantidad1 * precioUnitario;
